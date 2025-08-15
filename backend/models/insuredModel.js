@@ -5,7 +5,7 @@ const insuredSchema = new mongoose.Schema({
     lastName: {type: String, required: true},
     dateOfBirth: {type: Date, required: true},
     employmentStatus: {type: String, required: true},
-    currentLicence: {type: Boolean, required: true},
+    currentLicence: {type: String, required: true},
     ageWhenAcquiredLicence: {type: Number, required: true},
     validTrainingCertificate: {type: Boolean, required: true},
     licenceSuspended: {type: Boolean, required: true},
