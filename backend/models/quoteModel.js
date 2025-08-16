@@ -4,7 +4,8 @@ const quoteModelSchema = new mongoose.Schema({
     quoteNumber : {type: String, required: true},
     effectivePolicyDate: {type: Date, required: true},
     insured: { type: mongoose.Schema.Types.ObjectId, ref: 'insured' },
-    cars: [{ type: mongoose.Schema.Types.ObjectId, ref: 'car' }]
+    cars: [{ type: mongoose.Schema.Types.ObjectId, ref: 'car' }],
+    premium: {type: Number}
 
 })
 
