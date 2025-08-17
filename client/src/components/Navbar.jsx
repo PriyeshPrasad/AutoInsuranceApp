@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import assets from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
-import { AppContext } from '../context/appContext'
+import { AppContext } from '../context/AppContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 
-const Navbar = () => {
+const Navbar = ({showQuote}) => {
   const navigate = useNavigate()
   const { userData, backendUrl, setUserData, setIsLoggedIn } = useContext(AppContext)
   const logout = async ()=>{
@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <div className='w-full flex justify-between items-center p-4 sm:p-6 sm:px-24 absolute top-0'>
-      <img src={assets.logo} alt="" className='w-28 sm:w-32' />
+      <img onClick={showQuote} src={assets.logo} alt="" className='w-28 sm:w-32' />
       {userData ?
         <div className='flex justify-center items-center w-8 h-8 rounded-full bg-black text-white relative group'>
           {userData.name[0].toUpperCase()}
